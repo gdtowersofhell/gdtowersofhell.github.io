@@ -124,7 +124,7 @@ export default {
               <div class="type-title-sm">Points when completed</div>
               <p>
                 {{
-                  score(getOriginalRank(selectedLevel), 100, selectedLevel.percentToQualify)
+                  score(getOriginalRank(selectedLevel), 100, selectedLevel.floorToQualify)
                 }}
               </p>
             </li>
@@ -160,7 +160,7 @@ export default {
           <table class="records">
             <tr v-for="record in selectedLevel.records" class="record">
               <td class="percent">
-                <p>{{ record.percent }}%</p>
+                <p>Floor {{ record.floor }}</p>
               </td>
               <td class="user">
                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
