@@ -62,7 +62,7 @@ export default {
                                 <p>{{ currentLevel.id }}</p>
                             </div>
                             <form class="actions" v-if="!givenUp">
-                                <input type="number" v-model="percentage" :placeholder="placeholder" :min="currentPercentage + 1" max=100>
+                                <input type="number" v-model="percentage" :placeholder="placeholder" :min="currentPercentage + 1" max=10>
                                 <Btn @click.native.prevent="onDone">Done</Btn>
                                 <Btn @click.native.prevent="onGiveUp" style="background-color: #e91e63;">Give Up</Btn>
                             </form>
@@ -141,7 +141,7 @@ export default {
         },
         hasCompleted() {
             return (
-                this.progression[this.progression.length - 1] >= 100 ||
+                this.progression[this.progression.length - 1] >= 10 ||
                 this.progression.length === this.levels.length
             );
         },
@@ -192,7 +192,7 @@ export default {
             }
 
             // random 100 levels
-            this.levels = shuffle(list).slice(0, 100);
+            this.levels = shuffle(list).slice(0, 10);
             this.showRemaining = false;
             this.givenUp = false;
             this.progression = [];
@@ -216,7 +216,7 @@ export default {
 
             if (
                 this.percentage <= this.currentPercentage ||
-                this.percentage > 100
+                this.percentage > 10
             ) {
                 this.showToast('Invalid percentage.');
                 return;
