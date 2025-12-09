@@ -1,21 +1,10 @@
 [
   {
-    "name": "Test pack",
+    "name": "Top 1 Pack",
     "color": "#FF0000",
     "levels": [
       128893664,
-      1,
-      1
-    ]
-  },
-  {
-    "name": "Test pack 2",
-    "color": "#FF0000",
-    "levels": [
-      1,
-      1,
-      1,
-      12
+      124984126
     ]
   }
 ]
