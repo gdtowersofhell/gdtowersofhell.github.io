@@ -92,36 +92,66 @@ export default {
       <div class="level-container" v-if="selectedLevel">
         <div class="level">
           <h1>{{ selectedLevel.name }}</h1>
-          <LevelAuthors
-            :author="selectedLevel.author"
-            :creators="selectedLevel.creators"
-            :verifier="selectedLevel.verifier"
-          ></LevelAuthors>
-          <iframe
-            class="video"
-            id="videoframe"
-            :src="embed(selectedLevel.showcase || selectedLevel.verification)"
-            frameborder="0"
-          ></iframe>
+          <LevelAuthors :author="selectedLevel.author" :creators="selectedLevel.creators" :verifier="selectedLevel.verifier"></LevelAuthors>
+          <p>{{ selectedLevel.description || 'No description was provided for this tower yet'}}</p>
+          <p>{{ "Skillsets: " + selectedLevel.skillsets || 'No skillsets have been added for this tower yet'}}</p>
+          <iframe class="video" id="videoframe" :src="embed(selectedLevel.showcase || selectedLevel.verification)" frameborder="0"></iframe>
           <ul class="stats">
+            <li>
+              <div class="type-title-sm">Points when completed</div>
+              <p>
+                {{
+                  score(getOriginalRank(selectedLevel), 100, selectedLevel.floorToQualify)
+                }}
+              </p>
+            </li>
             <li>
               <div class="type-title-sm">ID</div>
               <p>{{ selectedLevel.id }}</p>
             </li>
             <li>
-              <div class="type-title-sm">FPS</div>
-              <p>{{ selectedLevel.fps || 'Any' }}</p>
+              <div class="type-title-sm">DIFFICULTY</div>
+              <p>{{ selectedLevel.difficulty || 'Any' }}</p>
+            </li>
+            <li>
+              <div class="type-title-sm">DIFFICULTY RATING</div>
+              <p>{{ selectedLevel.decimalDiff || 'Any' }}</p>
+            </li>
+            <li>
+              <div class="type-title-sm">SYMBOLS</div>
+              <p>{{ selectedLevel.symbols || 'None' }}</p>
             </li>
             <li>
               <div class="type-title-sm">VERSION</div>
               <p>{{ selectedLevel.version || 'Any' }}</p>
             </li>
-            <li>
-              <div class="type-title-sm">ALTERNATING</div>
-              <p>{{ selectedLevel.alternating || 'No' }}</p>
-            </li>
           </ul>
+          <h2>Records</h2>
+          <p v-if="selectedIndexInFullList <= 100">
+            Reach floor <strong>{{ selectedLevel.floorToQualify }}</strong> to qualify
+          </p>
+          <p v-else-if="selectedIndexInFullList <= 200">
+            <strong>100%</strong> to qualify
+          </p>
+          <p v-else>This level does not accept new records.</p>
+          <table class="records">
+            <tr v-for="record in selectedLevel.records" class="record">
+              <td class="percent">
+                <p>Floor {{ record.floor }}</p>
+              </td>
+              <td class="user">
+                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
+              </td>
+              <td class="mobile">
+                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+              </td>
+              <td>
+                <p>{{ record.hz }}</p>
+              </td>
+            </tr>
+          </table>
         </div>
+      </div>
       </div>
     </main>
   `,
