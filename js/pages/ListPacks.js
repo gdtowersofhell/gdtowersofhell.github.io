@@ -105,14 +105,6 @@ export default {
           ></iframe>
           <ul class="stats">
             <li>
-              <div class="type-title-sm">Points when completed</div>
-              <p>
-                {{
-                  score(getOriginalRank(selectedLevel), 100, selectedLevel.floorToQualify)
-                }}
-              </p>
-            </li>
-            <li>
               <div class="type-title-sm">ID</div>
               <p>{{ selectedLevel.id }}</p>
             </li>

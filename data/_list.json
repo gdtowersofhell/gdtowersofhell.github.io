@@ -1,4 +1,7 @@
 [
 	"ToGC(HC)",
-	"ToBP"
+	"ToBP",
+	"ToATF",
+	"ToFE",
+	"ToDC"
 ]

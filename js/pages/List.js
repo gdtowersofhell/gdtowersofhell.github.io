@@ -75,7 +75,7 @@ export default {
       this.errors.push(
         ...this.list
           .filter(([_, err]) => err)
-          .map(([_, err]) => `Failed to load level. (${err}.json)`)
+          .map(([_, err]) => `Failed to load level. (${err}.json\nsomeone probably forgot to put a value somewhere)`)
       );
       if (!this.editors) {
         this.errors.push("Failed to load list editors.");
@@ -105,6 +105,9 @@ export default {
               <button @click="selected = i">
                 <span class="type-label-lg">
                   {{ item[0]?.name || \`Error (\${item[1]}.json)\` }}
+                </span>
+                <span class="type-label-lg">
+                  {{ item[0]?.decimalDiff || \`Error (\${item[1]}.json)\` }}
                 </span>
               </button>
             </td>
@@ -209,7 +212,7 @@ export default {
               </li>
             </ol>
           </template>
-        <p>All of the code was made by the people above. All I did was edit the template to have some instructions and I also cleared out the levels in it. Make sure to replace any placeholder text. I've added some notes here and there if you want to go and read it. Theres also a tutorial on how to add packs under the tools folder. Add levels, records, packs, and editors in the files under the data folder. Have fun! <br><br>You can remove this message in List.js under js/pages/List.js.</p>
+        <p>Official list for GDToH.</p>
         <h3>Legend</h3>
         <p>↓ = nerfed</p>
         <p>↑ = buffed</p>
@@ -217,15 +220,21 @@ export default {
         <p>⇓ = difficulty placed lower than original</p>
         <p>✔ = whitelisted</p>
         <h3>Soul Crushing Difficulties:</h3>
-        <p>🟂 insane</p>
+        <p>🟂 Insane</p>
+        <p>✦ Extreme</p>
+        <p>★ Terrifying</p>
+        <p>✶ Catastrophic</p>
+        <p>✷ Horrific</p>
+        <p>✸ Unreal</p>
+        <p>✹ Nil</p>
         <h3>Level Requirements</h3>
         <p>Level must be submitted, may not have to be whitelisted.</p>
-        <p>Level must be at least 9 floors long.</p>
+        <p>Level must be at least 5 floors long.</p>
 		    <p>Level must be physically possible.</p>
 		    <p>Level must have a somewhat definitive difficulty.</p>
-        <p>Towers must have a somewhat moderate amount of quality.</p>
+        <p>Towers must have a somewhat moderate amount of quality, or be historically significant to the game. No, your shitty "new top 1" doesn't count as historically significant.</p>
 		    <h3>Submission Requirements</h3>
-        <p>This is where you put the rules for submissions</p>
+        <p>Please provide recordings of completions or verifications, also only SC Towers will be added to this list as of right now.</p>
         </div>
       </div>
     </main>

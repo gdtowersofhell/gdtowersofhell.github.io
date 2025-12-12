@@ -4,7 +4,18 @@
     "color": "#FF0000",
     "levels": [
       128893664,
+      124984126,
       124984126
+
+    ]
+  },
+  {
+    "name": "Underestimated Difficulty Pack",
+    "color": "#FF00FF",
+    "levels": [
+      124203183,
+      124984126
+
     ]
   }
 ]
