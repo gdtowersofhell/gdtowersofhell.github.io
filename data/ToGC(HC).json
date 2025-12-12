@@ -17,7 +17,8 @@
             "user": "Greycreate",
             "link": "https://www.youtube.com/watch?v=kq0Erdds1PI",
             "hz": "240",
-            "floor": 100
+            "floor": 10,
+            "completed": true
         }
      ]
 }
