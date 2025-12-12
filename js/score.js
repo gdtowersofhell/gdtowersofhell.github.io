@@ -2,7 +2,10 @@
  * Numbers of decimal digits to round to
  */
 const scale = 3;
-
+/**
+ * Cutoff for legacy list
+ */
+const legacyCutoff = 10
 /**
  * Calculate the score awarded when having a certain percentage on a list level
  * @param {Number} rank Position on the list
@@ -11,10 +14,10 @@ const scale = 3;
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 200) {
+    if (rank > legacyCutoff) {
         return 0;
     }
-    if (rank > 200 && percent < 100) {
+    if (rank > legacyCutoff && percent < 100) {
         return 0;
     }
 
