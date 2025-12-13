@@ -19,6 +19,13 @@
             "hz": "240",
             "floor": 10,
             "completed": true
+        },
+        {
+            "user": "VoodooOfFlesh",
+            "link": "none",
+            "hz": "60",
+            "floor": 10,
+            "completed": true
         }
      ]
 }

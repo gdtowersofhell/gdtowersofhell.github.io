@@ -13,5 +13,12 @@
     "symbols": "🟂✔ ⇑",
     "decimalDiff": 7.7,
     "records": [
+        {
+            "user": "VoodooOfFlesh",
+            "link": "none",
+            "hz": "60",
+            "floor": 10,
+            "completed": true
+        }
      ]
 }
