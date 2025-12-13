@@ -13,5 +13,13 @@
     "symbols": " ✔ ⇓",
     "decimalDiff": 7.5,
     "records": [
+        {
+            "user": "Greycreate",
+            "link": "https://www.youtube.com/watch?v=pxCzmlcFMDA",
+            "hz": "240",
+            "floor": 10,
+            "completed": true
+        }
      ]
 }
+
