@@ -1,0 +1,24 @@
+{
+    "id": "none",
+    "name": "Tower of The Unknown (Classic)",
+    "author": "VoodooOfFlesh",
+    "creators": ["VoodooOfFlesh"],
+    "verifier": "DueloMaestro",
+    "description": "",
+    "skillsets": "Memory, Nerve Control, Timings",
+    "verification": "",
+    "floorToQualify": "10",
+    "difficulty": "REMORSELESS",
+    "version": "2.2",
+    "symbols": "✔ ↓ ⇓",
+    "decimalDiff": 7.8,
+    "records": [
+        {
+            "user": "VoodooOfFlesh",
+            "link": "none",
+            "hz": "60",
+            "floor": 10,
+            "completed": true
+        }
+     ]
+}
